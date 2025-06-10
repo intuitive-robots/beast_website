@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>BEAST: An Efficient Action Tokenizer with B-Splines</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://hongyizhoucn.github.io/">Hongyi Zhou</a><sup>1</sup>, Weiran Liao<sup>2</sup>, Xi Huang<sup>3</sup>, 
+                <a href="https://yucheng-tang.github.io/">Yucheng Tang</a><sup>4</sup>, 
+                <a href="https://ottofabian.github.io/">Fabian Otto</a><sup>5</sup>, 
+                <a href="https://xiaogangjia.github.io/Personal_Website/">Xiaogang Jia </a><sup>1,2</sup>, 
+                <a href="https://xinkai-jiang.github.io/">Xinkai Jiang</a><sup>1,2</sup>, Simon Hilber <sup>1</sup>, 
+                <a href="https://brucegeli.github.io/">Ge Li</a><sup>1,2</sup>, Qian Wang<sup>2</sup>, Ömer Erdinç Yağmurlu<sup>1</sup>, Nils Blank<sup>1</sup>, 
+                <a href="https://mbreuss.github.io/">Moritz Reuss</a><sup>1</sup>, 
+                <a href="https://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a><sup>1</sup> </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><a href="https://www.irl.iar.kit.edu/">1. Intuitive Robots Lab (IRL), KIT, Germany</a></span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><a href="https://alr.iar.kit.edu/">2. Autonomous Learning Robots (ALR), KIT, Germany</a></span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><a href="https://ipr.iar.kit.edu/">3. Intelligent Process Automation and Robotics Lab (IPR), KIT, Germany</a></span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><a href="https://www.h-ka.de/iras/profil">4. Institute for Robotics and Autonomous Systems (IRAS), HKA, Germany</a></span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">5. Microsoft Research, UK</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/BEAST-NeurIPS2025-Submission/beast_calvin" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present the <span class="bold">B</span>-spline <span class="bold">E</span>ncoded <span class="bold">A</span>ction <span class="bold">S</span>equence <span class="bold">T</span>okenizer
+            (<span class="bold">BEAST</span>), a novel action tokenizer that encodes action sequences into compact discrete or continuous tokens using B-spline. In contrast to existing action tokenizers based on vector quantization or byte pair encoding, BEAST requires no separate tokenizer training and consistently produces tokens of uniform length, enabling fast action sequence generation via parallel decoding. Leveraging our B-spline formulation, BEAST inherently ensures generating smooth trajectories without discontinuities between adjacent segments. We extensively evaluate BEAST by integrating it with three distinct model architectures: a Variational Autoencoder (VAE) with continuous tokens, a decoder-only Transformer with discrete tokens, and Florence-2, a Vision-Language Model with an encoder-decoder architecture, demonstrating BEAST's compatibility and scalability with large pretrained models. We evaluate BEAST across three established benchmarks consisting of <span class="highlight">166 simulated tasks</span> and on three distinct robot settings with a total of <span class="highlight">8 real-world tasks</span>. Experimental results demonstrate that BEAST (i) significantly reduces both training and inference computational costs, and (ii) consistently generates smooth, high-frequency control signals suitable for continuous control tasks while (iii) reliably achieves competitive task success rates compared to state-of-the-art methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Calvin</h2>
+
+    <!-- Task Template -->
+
+    <!-- STACK -->
+    <div class="box">
+      <!-- <h3 class="title is-4">Real World Aloha</h3> -->
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/calvin.mp4" type="video/mp4"></video>
+    </div>
+    
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">LIBERO</h2>
+
+    <!-- Task Template -->
+
+    <!-- STACK -->
+    <div class="box">
+      <!-- <h3 class="title is-4">Real World Aloha</h3> -->
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/libero.mp4" type="video/mp4"></video>
+    </div>
+    
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Aloha_Sim</h2>
+
+    <!-- Two videos in one row -->
+    <div class="box">
+      <div class="columns is-variable is-6">
+        <div class="column">
+          <h3 class="title is-4 has-text-centered">Insertion</h3>
+          <video autoplay muted loop playsinline controls width="100%">
+            <source src="static/videos/aloha_sim/insertion.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="column">
+          <h3 class="title is-4 has-text-centered">Transfer</h3>
+          <video autoplay muted loop playsinline controls width="100%">
+            <source src="static/videos/aloha_sim/transfer.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- Task Videos -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Franka Challenge</h2>
+
+    <!-- Task Template -->
+
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Fold</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/franka/Fold.mp4" type="video/mp4"></video>
+    </div>
+    
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Mixer</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/franka/Mixer.mp4" type="video/mp4"></video>
+    </div>
+
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Pour</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/franka/Pour.mp4" type="video/mp4"></video>
+    </div>
+
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Sweep</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/franka/Sweep.mp4" type="video/mp4"></video>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Franka Kitchen</h2>
+
+    <!-- Task Template -->
+
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Fold</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/kitchen/banana.mp4" type="video/mp4"></video>
+    </div>
+    
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Mixer</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/kitchen/oven.mp4" type="video/mp4"></video>
+    </div>
+
+    <!-- STACK -->
+    <div class="box">
+      <h3 class="title is-4">Pour</h3>
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/kitchen/pot.mp4" type="video/mp4"></video>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Real World Aloha</h2>
+
+    <!-- Task Template -->
+
+    <!-- STACK -->
+    <div class="box">
+      <!-- <h3 class="title is-4">Real World Aloha</h3> -->
+      <video autoplay muted loop playsinline controls width="100%"><source src="static/videos/real_aloha.mp4" type="video/mp4"></video>
+    </div>
+    
+
+  </div>
+</section>
+
+
+<!-- Image carousel -->
+
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
