@@ -42,6 +42,40 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+
+  <style>
+    /* Fix Prism.js code block styling */
+    pre[class*="language-"], code[class*="language-"] {
+      font-size: 0.9rem;
+      border-radius: 6px;
+    }
+    .box pre {
+      background: #2d2d2d;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    /* Fix number token styling - remove all extra styling */
+    .token.number {
+      all: unset !important;
+      color: #f99157 !important;
+    }
+    code .token {
+      display: inline !important;
+      font-size: inherit !important;
+      line-height: inherit !important;
+      vertical-align: baseline !important;
+      background: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -177,6 +211,64 @@
         </div>
         <img src="static/images/encoder_frame.png" alt="Architecture Overview">
     </div>
+</section>
+
+<!-- Getting Started -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Getting Started</h2>
+
+    <p style="margin-bottom: 1.5rem;">
+      We provide a <a href="https://huggingface.co/zhouhongyi/beast" target="_blank"><strong>Hugging Face implementation</strong></a> for easy access.
+      Simply install the dependencies and start using BEAST in just a few lines of code.
+    </p>
+
+    <!-- Installation -->
+    <div class="box">
+      <h3 class="title is-4">Installation</h3>
+      <pre><code class="language-bash">pip install torch numpy matplotlib einops transformers</code></pre>
+      <p class="has-text-grey" style="margin-top: 0.5rem;">
+        <strong>Note:</strong> CUDA is recommended for optimal performance, but CPU is also supported by setting <code>device="cpu"</code>.
+      </p>
+    </div>
+
+    <!-- Quick Start -->
+    <div class="box">
+      <h3 class="title is-4">Quick Start</h3>
+      <pre id="quickstart-code"><code class="language-python">from transformers import AutoProcessor
+import torch
+
+# Initialize the BEAST processor
+beast = AutoProcessor.from_pretrained(
+    "zhouhongyi/beast",
+    trust_remote_code=True,
+    num_dof = 3,
+    num_basis = 20,
+    seq_len = 50,
+    degree_p = 3,
+    device = 'cpu'
+)
+
+# Create random trajectory data: 10 trajectories, 50 time steps, 3 dimensions
+trajectories = torch.randn(10, 50, 3)
+
+# Encode trajectories into discrete tokens
+tokens = beast.encode_discrete(trajectories, update_bounds=True)
+print(f"Encoded tokens shape: {tokens.shape}")
+
+# Decode tokens back to continuous trajectories
+reconstructed_trajectories = beast.decode_discrete(tokens)
+print(f"Reconstructed trajectories shape: {reconstructed_trajectories.shape}")
+
+# Calculate reconstruction quality
+mse_loss = torch.mean((trajectories - reconstructed_trajectories) ** 2)
+print(f"MSE Loss: {mse_loss.item()}")</code></pre>
+      <button class="button is-small is-dark" onclick="copyCode('quickstart-code')" id="copy-code-btn" style="margin-top: 0.5rem;">
+        <span class="icon"><i class="fas fa-copy"></i></span>
+        <span>Copy</span>
+      </button>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -380,6 +472,18 @@ url={https://openreview.net/forum?id=rQCl1sf62w}
       const text = document.getElementById('bibtex-text').innerText;
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('copy-btn');
+        btn.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Copied!</span>';
+        setTimeout(() => {
+          btn.innerHTML = '<span class="icon"><i class="fas fa-copy"></i></span><span>Copy</span>';
+        }, 2000);
+      });
+    }
+
+    function copyCode(elementId) {
+      const codeElement = document.getElementById(elementId);
+      const text = codeElement.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-code-btn');
         btn.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Copied!</span>';
         setTimeout(() => {
           btn.innerHTML = '<span class="icon"><i class="fas fa-copy"></i></span><span>Copy</span>';
