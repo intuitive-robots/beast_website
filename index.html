@@ -90,14 +90,25 @@
                     <a href="https://arxiv.org/abs/2506.06072" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="ai ai-arxiv"></i>
                     </span>
                     <span>Paper</span>
                   </a>
                 </span>
 
-                  <!-- Github link -->
+                  <!-- Hugging Face link -->
                   <span class="link-block">
+                    <a href="https://huggingface.co/zhouhongyi/beast" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-robot"></i>
+                    </span>
+                    <span>Hugging Face</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
                     <a href="https://github.com/intuitive-robots/beast_calvin" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -340,6 +351,43 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+
+<!-- BibTeX Citation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">BibTeX</h2>
+        <div class="content has-text-left">
+          <pre id="bibtex-text" style="background-color: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;">@inproceedings{
+zhou2025beast,
+title={{BEAST}: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning},
+author={Hongyi Zhou and Weiran Liao and Xi Huang and Yucheng Tang and Fabian Otto and Xiaogang Jia and Xinkai Jiang and Simon Hilber and Ge Li and Qian Wang and {\"O}mer Erdin{\c{c}} Ya{\u{g}}murlu and Nils Blank and Moritz Reuss and Rudolf Lioutikov},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=rQCl1sf62w}
+}</pre>
+          <button class="button is-small is-dark" onclick="copyBibtex()" id="copy-btn">
+            <span class="icon"><i class="fas fa-copy"></i></span>
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function copyBibtex() {
+      const text = document.getElementById('bibtex-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Copied!</span>';
+        setTimeout(() => {
+          btn.innerHTML = '<span class="icon"><i class="fas fa-copy"></i></span><span>Copy</span>';
+        }, 2000);
+      });
+    }
+  </script>
+</section>
 
   </body>
   </html>
